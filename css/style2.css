@@ -1,0 +1,21 @@
+nav{
+	width:10%;
+	min-width: 130px;
+}
+section{
+	text-align: center;
+	width:80%;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+nav, section
+{
+
+	border: 1px solid black;
+    display: inline-block;
+    vertical-align: top;
+    zoom: 1;
+}
+p{
+	text-align: justify;
+}
