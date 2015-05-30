@@ -17,16 +17,11 @@
     font-style: normal;
 }
 body{
+    background-color: #212830;
     /*margin-top: 0.5em;*/
     /*margin-left:0.5em;*/
     /*margin-left:0.5em;*/
-
-}
-header{
-    background: url('../images/separateur.png') repeat-x bottom;
-
-    /*margin-bottom: 1em;*/
-    /*padding-bottom: 1em;*/
+    color:white;
 }
 
 #banniere_image{
@@ -39,7 +34,10 @@ header{
 #titre_principal{
     display: inline-block;
 }
-
+.container{
+    padding-left: 0em;
+    padding-right: 0em;
+}
 section h1, footer h1, nav a
 {
     /*font-family: impact, serif;
@@ -71,12 +69,6 @@ header h3{
 
 }
 
-#bloc_page{
-    /*background-color: #212830;*/
-    /*display: block;*/
-    color: black;
-}
-
 
 nav ul{
     list-style-type: none;
@@ -92,7 +84,7 @@ nav li{
 
 nav a{
     font-size: 1.1em;
-    color:black;
+    color:white;
     /*padding-bottom: 3px;*/
     text-decoration: none;
 }
@@ -102,9 +94,18 @@ nav a:hover{
     border-bottom: 3px solid gray;
 }
 
+
+#bloc_page{
+    background-color: #212830;
+    background: url('../images/separateur.png') repeat-x bottom;
+    color:white;
+}
 section{
-	/*background-image: url("../images/flash.jpg");*/
+	background-image: url("../images/flash.jpg");
     border : 2px solid black;
+}
+section article{
+    color : white;
 }
 
 section article img{

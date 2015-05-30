@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8"/>
-    <link href="./css/bootstrap.css" rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css" />
+    <meta charset="utf-8"/>
+    
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-
-	<title>
-		Mon site
-	</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>
+        Mon site
+    </title>
 
 </head>
     <body>
 
         
-            <header id="bloc-page" class="page-header">
-                <div id="titre_principal">
-                   
-                    <img src="images/mini_logo2.png" alt="Logo de Tenji 2" id="logo" />
-                    <h1>Tenji</h1>
-                    <h3>Carnets de bords</h3>
-                </div>   
-                    <nav>
-                        <ul>
-                            <li><a href="#">Accueil</a></li>
-                            <li><a href="#">Projets</a></li>
-                            <li><a href="#">CV</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
-                    </nav>
-            </header>
+        <header id="bloc-page" class="page-header">
+            <div id="titre_principal">
+               
+                <img src="images/mini_logo2.png" alt="Logo de Tenji 2" id="logo" />
+                <h1>Patrice Petit</h1>
+                <h3>Carnets de bords</h3>
+            </div>   
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="#">Projets</a></li>
+                        <li><a href="cv.php">CV</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+        </header>
    
         <div class="container">
          
@@ -39,8 +39,8 @@
                         <a href="#" class="bouton_rouge">Voir l'article <img src="images/flecheblanchedroite.png" alt="" /></a>
                     </div>
                 </div>
-    		<section>
-    				<article>
+            <section>
+                    <article>
                         <h3
                         ><img src="images/ico_epingle.png" alt="Catégorie voyage" class="ico_categorie" />Le premier article</h3>
                         
@@ -51,20 +51,20 @@
                         <p>Cras porttitor augue sed urna feugiat consequat sit amet nec libero. Duis urna augue, semper sed odio imperdiet, interdum ultricies urna. Quisque consequat risus purus, nec euismod dui laoreet et. Nam imperdiet ut odio quis hendrerit. Aenean dictum justo eget velit hendrerit euismod. In non velit vel elit dignissim porta in eu nisl. Vivamus ac quam lacinia, faucibus felis vel, tristique lorem. Donec non tempus quam. Aliquam tincidunt nunc id ligula consequat interdum. Vestibulum id tempus ex. Maecenas facilisis vehicula interdum. Proin non magna sapien. Ut non imperdiet arcu. Fusce convallis egestas nulla, at aliquet justo dictum ut. Integer et congue leo, et euismod purus.
                         </p>
 
-    				</article>
-    				<aside>
+                    </article>
+                    <aside>
                         <h4>À propos de l'auteur</h4>
                         <!-- <img src="images/bulle.png" alt="" id="fleche_bulle" /> -->
                         <p id="photo_ATOMSK"><img src="images/mini_ATOMSK.png" alt="Photo de Tenji" /></p>
                         <p class="text">
-                        je m'appelle Patrice Petit, je suis né un 24 octobre 1980. Pour voir mon <a href="#">CV</a></p>
-                        <p class="text">Voici le site qui me permettra de m'entrainter ainsi que montrer mes compétences.
+                        je m'appelle Patrice Petit, je suis né un 24 octobre 1980. Pour voir mon CV  cliquez <a href="#">ici</a></p>
+                        <p class="text">Voici le site qui vous permettra de me mieux me connaitre.
                         </p>
                         <p><img src="images/vimeo.png" alt="Vimeo" /><img src="images/rss.png" alt="RSS" /></p>
-    				</aside>
-    		</section>
+                    </aside>
+            </section>
         </div>
-		<footer class="page-header">
+        <footer>
             <div id="photos">
                 <h4>Photos</h4>
                 <p><img src="images/photo1.jpg" alt="Photographie" /><img src="images/photo2.jpg" alt="Photographie" /><img src="images/photo3.jpg" alt="Photographie" /><img src="images/photo4.jpg" alt="Photographie" /></p>
