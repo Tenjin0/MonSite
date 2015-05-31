@@ -88,7 +88,7 @@
                             
                             </div>
                         </article>
-                        <span> <a href="http://<?= $news["urlSite"]."/".$news["source_link"] ?>">source : <?=utf8_encode($news["name"]); ?></a>
+                        <span> <a href="http://<?= $news["urlSite"]."/".$news["source_link"] ?>">source : <?= $news["name"]; ?></a>
                         </span>
                         <span>publié le <?= $dateNews?></span>
                         <ul class="pager">
@@ -103,7 +103,7 @@
                             ?>
                                 <li class="previous disabled"><a class="disabled" href="">&larr; Older</a></li>
                             <?php } 
-                                if ($news["position"] < Dao::getNumberOfNews()){
+                                if ($news["position"] < $bdd->getNumberOfNews()){
                             ?>
                                 <li class="next active"><a href="./blog.php?page=<?=$news["position"]+1 ?>"> Next &rarr;</a></li>
                             <?php

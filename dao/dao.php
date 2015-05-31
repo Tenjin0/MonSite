@@ -2,20 +2,20 @@
 	require_once("config.php");
 	class Dao{
 		private static $myInstance;
-		private static $connection;
-		public static $numberOfNews;
+		private $connection;
+		public $numberOfNews;
 
 		private function __contruct(){
 			
 		}
 
-		public static function getConnection(){
+		public function getConnection(){
 				// echo "je passe par getConnection\n";
 			// if(!self::$connection){
 				// echo "connection n'existe pas\n";
 				try{
-					self::$connection = new PDO("mysql:host=".DB_hostname.";dbname=".DB_name.";chartset=utf8",DB_login,DB_password,array(PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING));
-					return self::$connection;
+					$this->connection = new PDO("mysql:host=".DB_hostname.";dbname=".DB_name.";chartset=utf8",DB_login,DB_password,array(PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING));
+					return $this->connection;
 				}
 				catch(Exception $e){
 					 die('Erreur : ' . $e->getMessage());    
@@ -26,9 +26,9 @@
 
 			if(!self::$myInstance){
 				self::$myInstance = new Dao();
-				self::getConnection();
+				self::$myInstance->getConnection();
 			}
-			self::$numberOfNews = self::$myInstance->requestNumberOfNews();
+			self::$myInstance->numberOfNews = self::$myInstance->requestNumberOfNews();
 			return self::$myInstance;
 		}
 		public function getList(){
@@ -77,8 +77,8 @@
 			return $this->execRequest($sql);
 		}
 
-		public static function getNumberOfNews(){
-			return self::$numberOfNews;
+		public  function getNumberOfNews(){
+			return $this->numberOfNews;
 		}
 
 		public function getNewsByMonth($month){
@@ -86,7 +86,7 @@
 		}
 
 		private function execRequest($sql){
-			$reponse = self::getConnection()->query($sql);
+			$reponse = $this->getConnection()->query($sql);
 			try {
 
 				if (!empty($données = $reponse->fetchAll())){
