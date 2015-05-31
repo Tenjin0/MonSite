@@ -1,11 +1,13 @@
 <?php 
 	require_once str_replace('//','/',dirname(__FILE__).'/')."dao.php";
 	$bdd=Dao::getInstance();
-	$news = $bdd->getLastNews();
+	// $news = $bdd->getLastNews();
     if(!empty($_GET["page"])){   
         $news = $bdd->getNewsByNumber($_GET["page"]);
+        $number=$_GET["page"];
     }else{
         $news = $bdd->getLastNews();
+         $number=1;
     }
 ?>
 
@@ -25,7 +27,7 @@
 
 </head>
     <body>
-        <nav id="mainbar" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <nav id="mainbar" class="navbar navbar-inverse" role="navigation">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -61,63 +63,89 @@
             </div>
         </nav> <!-- Navigation-->
 
-        <div class="container">
-            <header id="bloc-page" class="page-header">
-                <div id="titre_principal">
-                    <h3>Carnets de bords</h3>
-                </div>   
-            </header>
+        <header id="bloc-page" class="page-header">
+            <div id="titre_principal">
+                <h3>Carnets de bords <?= $number ?></h3>
+            </div>   
+        </header>
    
          
-            <div id="banniere_image">
-                    <div id="banniere_description">
-                        bla bla bla
-                        <a href="#" class="bouton_rouge">Voir l'article <img src="images/flecheblanchedroite.png" alt="" /></a>
-                    </div>
+        <div class="container">
+
+            <div class="row" id="banniere_image">
+                <div class="col-sm-12 "id="banniere_description">
+                    bla bla bla
+                    <a href="#" class="bouton_rouge">Voir l'article <img src="images/flecheblanchedroite.png" alt="" /></a>
                 </div>
-            <section>
-                    <article>
-                        <h4
-                        ><img src="images/<?= $news["icon"] ?>" alt="Linux" class="ico_categorie" /><?php echo utf8_encode($news["title"])."\n";?></h4>
-                        <?php 
-                        	$paragrapheContenu = explode("\n",utf8_encode($news["content"]));
-                        	foreach($paragrapheContenu as $key=>$value){
-                        		if (!empty($value)){
-                        			echo "<p>$value</p>";
-                        		}
-                        	}
+            </div>
 
-                        ?>
-                        
+            <div class="row">
+                <section id="news" class="col-md-9">
+                        <article>
+                            <h4>
+                                <img src="images/<?= $news["icon"] ?>" alt="Linux" class="ico_categorie" />
+                                <label><?php echo utf8_encode($news["title"])."\n";?></label>
+                            </h4>
+                            <?php 
+                                $paragrapheContenu = explode("\n",utf8_encode($news["content"]));
+                                foreach($paragrapheContenu as $key=>$value){
+                                    if (!empty(substr($value,0, strlen($value)-1))){
+                                        echo "<p>".substr($value,0, strlen($value)-1)."</p>";
+                                    }
+                                }
 
-                    </article>
-                    <aside>
-                        <h4>À propos de l'auteur</h4>
-                        <!-- <img src="images/bulle.png" alt="" id="fleche_bulle" /> -->
-                        <p id="photo_ATOMSK"><img src="images/mini_ATOMSK.png" alt="Photo de Tenji" /></p>
-                        <p class="text">
-                        je m'appelle Patrice Petit, je suis né un 24 octobre 1980. Pour voir mon CV  cliquez <a href="#">ici</a></p>
-                        <p class="text">Voici le site qui vous permettra de me mieux me connaitre.
-                        </p>
-                        <p><img src="images/vimeo.png" alt="Vimeo" /><img src="images/rss.png" alt="RSS" /></p>
-                    </aside>
-            </section>
+                            ?>
+                        </article>
+                        <span> <a href="http://<?= $news["urlSite"]."/".$news["source_link"] ?>">source : <?=utf8_encode($news["name"]); ?></a>
+                        </span>
+                        <ul class="pager">
+                            <?php 
+                                if ($news["position"] > 1){
+
+                                
+                            ?>
+                                <li class="previous active"><a href="./blog.php?page=<?=$news["position"]-1?>">&larr; Older </a></li>
+                            <?php
+                                } else {
+                            ?>
+                                <li class="previous disabled"><a class="disabled" href="">&larr; Older</a></li>
+                            <?php } 
+                                if ($news["position"] < Dao::getNumberOfNews()){
+                            ?>
+                                <li class="next active"><a href="./blog.php?page=<?=$news["position"]+1 ?>"> Next &rarr;</a></li>
+                            <?php
+                                } else {
+
+                            
+                            ?>
+
+                            <li class="next disabled"><a class="disabled"href=""> Next &rarr;</a></li>
+                            <?php } ?>
+                        </ul>
+
+
+                </section>
+
+                <section class="well col-md-3"></section>
+            </div>
         </div>
-        <footer>
-            <div id="photos">
+        <footer class="row">
+            <div class="col-md-4 col-sm-6" id="photos">
                 <h4>Photos</h4>
                 <p><img src="images/photo1.jpg" alt="Photographie" /><img src="images/photo2.jpg" alt="Photographie" /><img src="images/photo3.jpg" alt="Photographie" /><img src="images/photo4.jpg" alt="Photographie" /></p>
             </div>
-            <div id="videos">
+            <div class="col-md-4 col-sm-6" id="videos">
                 <h4>Videos</h4>
                 <p></p>
             </div>
-            <div id="liens"/>
+            <div class="col-md-4 col-sm-12" id="liens"/>
                 <h4>Mes liens</h4>
                 <p></p>
             </div>
+            <!-- <div class="row">
             <p>Copyright Tenji - Tous droits réservés
             <a href="#">Me contacter !</a></p>
+            </div> -->
         </footer>
         <script src="./bower_components/jquery/dist/jquery.min.js"></script>
         <script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>

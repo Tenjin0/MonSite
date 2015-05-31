@@ -1,10 +1,23 @@
 Securiser l'acces a la base de donnée
+FAIRE MVC MODEL ( revoir variable statique sur dao)
 Navigation
 	GitHub
 Blog
-	Bootstrap
+	Barre navigation hover
+	Bootstrap effet carroussel
+	Card UI
+	image centré
+	footer videos
+	footer images
+	Effet animation 3D bouton
 	fonction de recherche
-	précédent/ Suivant
+	inscription (modal)
+	Connexion / Déconnexion
+	Se souvenir de moi
+	commentaire imbriqué
+	like/dislike
+	précédent/ Suivant (done)
+
 CV	
 	Bootstrap
 	Contact

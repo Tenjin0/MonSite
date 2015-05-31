@@ -8,15 +8,22 @@
     src: url('../fonts/lokicola.ttf');
 }
 
-#mainbar{
-    background-color: #000;
-    /*background-color: #E55B53;*/
+.navbar-inverse{
+    /*background-color: #000;*/
+    background-color: #E55B53;
     font-family:"DIN-regular";
     color: #FFF;
+    border: 0px;
+    border-radius: 0;
+
 }
+/*.navbar-header,.navbar-nav{
+    margin-top: 9px;
+   
+}*/
 
 .navbar-inverse .navbar-nav li .bar{
-    font-size: 14px;
+    font-size: 13px;
     font-family:"DINregular",impact;
     color: #FFF;
     font-weight: bold;
@@ -29,20 +36,12 @@
     color: #FFF;
 }
 
-/*.navbar-inverse .navbar-nav .open button{
-    background-color: #555;
-} */
+.navbar-inverse .navbar-nav li:hover,.navbar-inverse .navbar-nav .open a:hover,.navbar-inverse .navbar-nav > li > a:hover,.navbar-inverse .navbar-brand:hover{
 
-/*.navbar-inverse .navbar-nav .open a:focus{
     background-color: #FFF;
-}*/
-.navbar-inverse .navbar-nav li:hover,.navbar-inverse .navbar-nav .open a:hover{
-    background-color: #555;
+    color:#222;
+    /*background-color: #555;*/
 }
-
-/*.navbar-inverse .navbar-nav .open a:hover{
-    background-color: #555;
-}*/
 
 .dropdown-menu li a {
     font-family:"DINregular",impact;
@@ -57,7 +56,9 @@
 
 .open .dropdown-menu {
     background-color: #333;
-
+/*   background-color: #FFF;
+   color:#222;
+*/
 }
 .dropdown-menu .separator {
     margin: -5px 0px 0px;
@@ -94,4 +95,40 @@
 .navbar .navbar-brand label{
     margin-left:5px;
     font-weight: 100;
+}
+
+.topbar-right {
+    float: right;
+}
+.topbar-search input {
+    /*float: left;*/
+    /*position: absolute;*/
+
+    /*top: 0px;
+    left: 34px;
+    right: 0px;*/
+    background: #FFF repeat scroll 0% 0%;
+    /*background-color:;*/
+    border: medium none;
+ /*   height: 32px;
+    width: 100%;
+    padding: 0px 5px;*/
+    color: #6D7A8B;
+}
+
+.topbar-search .icon-search {
+    color: #FFF;
+    background: #78AB4E none repeat scroll 0% 0%;
+    text-shadow: none;
+    /*position: absolute;*/
+    top: 2px;
+    left: 0px;
+    width: 22px;
+    /*height: 32px;*/
+    text-align: center;
+    line-height: 22px;
+    /*font-weight: normal;*/
+    /*display: inline-block;*/
+    transition-property: font-size;
+    transition-duration: 0.3s;
 }
