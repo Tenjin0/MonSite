@@ -21,7 +21,7 @@
                 <li class="dropdown"> 
                     <a class="bar" data-toggle="dropdown" href="#">Projets<b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <hr class="separator">
+                        
                         <li class="dropdown-header">PHP</li>
                         <li><a href="#">LibraryOnline</a></li>
                         <li class="divider"></li>
@@ -53,7 +53,7 @@
                             </span>
                         </div>
                     </form>
-                    <ul class="nav navbar-nav"> 
+                    <ul class="submenu nav navbar-nav"> 
                         <?php  if(isset($_SESSION['User'])){?>
                             <li><a class="bar" id="btn-account" href="<?php  echo  REFFERER.DS.'users/account/' ?>">Mon Compte</a></li>
                             <li><a class="bar" id="btn-logout" href="<?php  echo  REFFERER.DS.'users/logout/' ?>">Se déconnecter</a></li>
@@ -62,14 +62,14 @@
                        <!--  <button type="submit" class="col-md-3 btn login-btn">S&#39;inscrire</button> -->
                         <li><a class="bar" id="btn-signin" href="<?php  echo  REFFERER.DS.'users/signin/' ?>">S&#39;inscrire</a><li>
                          <li>            
-                            <a id="btn-login" data-toggle="dropdown" class="bar dropdown-toggle" href="#">Login <b class=" caret"></b></a>
-                            <form method="POST"class="navformlog dropdown-menu" action="" >
-                                <!-- <div class="form-group"> -->
-                                    <hr class="separator">
+                            <a id="btn-login" data-toggle="dropdown" class="bar dropdown-toggle" href="<?php  echo  REFFERER.DS.'users/login/' ?>">Login <b class=" caret"></b></a>
+                            <form method="POST"class="navformlog dropdown-menu" action="<?php  echo  REFFERER.DS.'users/login/' ?>" >
+                                <div class="form-group">
+                                    
                                     <input type="text" placeholder="email@email.com" onclick="return false;" class=" inputdropdown form-control input-sm" id="inputError" />
                                     <input type="password" placeholder="Password" class="inputdropdown form-control input-sm" name="password" id="Password1" />
                                      <button id="signIn"type="submit" class="inputdropdown btn btn-success col-md-12 btn-sm">Sign in</button>
-                                <!-- </div> -->
+                                </div>
                             </form>
                         </li> 
                         <?php  } ?>

@@ -1,1 +1,1 @@
-<?php echo crypt('patman'); ?>
+test.php

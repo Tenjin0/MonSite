@@ -128,10 +128,37 @@
     color: #6D7A8B;
 }
 
-.form-search {
+.navformlog {
+    background: #111 none repeat scroll 0% 0%;
+    border-top: 1px solid #FFC203;
+    margin: 10px -15px;
+
+    right: 10px;
+    width: 225px;
+    padding: 10px;
+    padding: 10px 10px 4px;
+}
+
+.navformlog:hover{
+    visibility: visible;
+}
+
+.inputdropdown,#signIn{
+    border-radius: 0px;
+    width: 100%;
+    border: 0px none;
+    margin: 0px 1px 6px;
+    color: #FFF;
+    border-radius:none;
+    padding: 5px 10px;
 
 }
-.navbar-form {
+#signIn{
+    /*margin: 0px 1px 5px;*/
+}
+
+.navbar-form, .navformlog{ 
+    border-radius: 0px;
     margin: 10px -15px;
 }
 .icon-search {
@@ -147,6 +174,6 @@
     line-height: 22px;
     /*font-weight: normal;*/
     /*display: inline-block;*/
-    transition-property: font-size;
-    transition-duration: 0.3s;
+/*    transition-property: font-size;
+    transition-duration: 0.3s;*/
 }

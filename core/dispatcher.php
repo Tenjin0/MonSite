@@ -33,16 +33,14 @@ class Dispatcher{
 		$controller->e404($message);
 	}
 	public function loadController(){
-
 		$name = ucfirst($this->request->controller).'Controller';
 		$file = ROOT.DS.'controller'.DS.$name.'.php';
 		// var_dump($name);
-		//debug($this->request);
+		// debug($this->request);
 		if(!file_exists($file)){
 			$this->error('Le controller '.$this->request->controller.' n\'existe pas');
 		}
 		require($file);
-		// print_r($this->request);
 		$controller =  new $name($this->request);
 	
 		$controller->session = new Session();

@@ -143,3 +143,15 @@ footer{
 .userinput{
     margin: 1em 1em 1em;
 }
+
+
+
+.input-sm{
+    width: 100%;
+    padding: 5px 10px;
+    margin: 0px 1px 5px;
+    font-family: Titillium,sans-serif;
+    line-height: 2.4rem;
+    color: #FFF;
+    border-radius:none;
+}

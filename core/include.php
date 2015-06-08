@@ -2,7 +2,7 @@
 require("session.php");
 require("function.php");
 require('rooter.php');
-
+// var_dump(ROOT.DS.'config'.DS.'config.php');
 require(ROOT.DS.'config'.DS.'config.php');
 define('ADMIN',array_keys(Rooter::$prefixes)[0]);
 require('dao.php');

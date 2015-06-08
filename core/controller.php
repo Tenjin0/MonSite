@@ -14,6 +14,7 @@ class Controller{
 		}
 		$this->session = new Session();
 		$this->form = new Form($this);
+		
 		require ROOT.DS.'config'.DS.'hook.php';
 	}
 	public function render($view){
