@@ -10,7 +10,7 @@
 
 .navbar-inverse{
     /*background-color: #000;*/
-    background-color: #E55B53;
+    /*background-color: #E55B53;*/
     font-family:"DIN-regular";
     color: #FFF;
     border: 0px;
@@ -22,7 +22,7 @@
    
 }*/
 
-.navbar-inverse .navbar-nav li .bar{
+.navbar-inverse .navbar-nav li .bar,#btn-login{
     font-size: 13px;
     font-family:"DINregular",impact;
     color: #FFF;
@@ -128,7 +128,13 @@
     color: #6D7A8B;
 }
 
-.topbar-search .icon-search {
+.form-search {
+
+}
+.navbar-form {
+    margin: 10px -15px;
+}
+.icon-search {
     color: #FFF;
     background: #78AB4E none repeat scroll 0% 0%;
     text-shadow: none;

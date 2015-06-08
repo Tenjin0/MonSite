@@ -15,6 +15,7 @@ require(CORE.DS.'include.php');
 // $indice = array_search("webroot", $tab);
 // var_dump($indice);
 //array_splice(input, offset);
+
 new Dispatcher();
 ?>
 

@@ -1,3 +1,6 @@
+<?php //debug($this)?>
+<?php //debug($_SESSION['User'])?>
+
 <nav id="mainbar" class="navbar navbar-inverse" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -31,20 +34,50 @@
                 </li>
             </ul>
             <div class="navbar-right">
-                <div class="row">
-                    <form class="topbar-search col-md-6" id="topbar-search" method="get" action="/search">
-                        <span>     
-                        </span>
-                        <a class="icon-search glyphicon glyphicon-search" href="/search" aria-hidden="true"></a>
-                        <input id="q" name="q" placeholder="Rechercher" />
-                
+                <!-- <div class="row"> -->
+                    <!-- <form class="navbar-form topbar-search" id="topbar-search" method="get" action="/search" role="search"> -->
+                   <form class="navbar-form navbar-left" role="search">
+                        <div class="input-group">
+                            <input type="text" class="form-control input-sm" placeholder="Search">
+                            <span class="input-group-btn">
+                            <button type="reset" class="btn btn-default btn-sm">
+                                <span class="text-warning glyphicon glyphicon-remove">
+                                    <span class="sr-only">Close</span>
+                                </span>
+                            </button>
+                                <button type="submit" class="btn btn-warning btn-sm">
+                                    <span class="glyphicon glyphicon-search">
+                                        <span class="sr-only">Search</span>
+                                    </span>
+                                </button>
+                            </span>
+                        </div>
                     </form>
-                    <a class="col-md-3 btn" id="btn-login" href="/MonSite/partials/signup.php">S&#39;inscrire</a>
-                   <!--  <button type="submit" class="col-md-3 btn login-btn">S&#39;inscrire</button> -->
-                    <a class="col-md-3 btn" id="btn-login" href="/login.php">Se connecter</a>
-                </div>
+                    <ul class="nav navbar-nav"> 
+                        <?php  if(isset($_SESSION['User'])){?>
+                            <li><a class="bar" id="btn-account" href="<?php  echo  REFFERER.DS.'users/account/' ?>">Mon Compte</a></li>
+                            <li><a class="bar" id="btn-logout" href="<?php  echo  REFFERER.DS.'users/logout/' ?>">Se déconnecter</a></li>
+                        <?php } else {?>
+                        
+                       <!--  <button type="submit" class="col-md-3 btn login-btn">S&#39;inscrire</button> -->
+                        <li><a class="bar" id="btn-signin" href="<?php  echo  REFFERER.DS.'users/signin/' ?>">S&#39;inscrire</a><li>
+                         <li>            
+                            <a id="btn-login" data-toggle="dropdown" class="bar dropdown-toggle" href="#">Login <b class=" caret"></b></a>
+                            <form method="POST"class="navformlog dropdown-menu" action="" >
+                                <!-- <div class="form-group"> -->
+                                    <hr class="separator">
+                                    <input type="text" placeholder="email@email.com" onclick="return false;" class=" inputdropdown form-control input-sm" id="inputError" />
+                                    <input type="password" placeholder="Password" class="inputdropdown form-control input-sm" name="password" id="Password1" />
+                                     <button id="signIn"type="submit" class="inputdropdown btn btn-success col-md-12 btn-sm">Sign in</button>
+                                <!-- </div> -->
+                            </form>
+                        </li> 
+                        <?php  } ?>
+                    </ul>
+                <!-- </div> -->
                 
             </div>
         </div>
     </div> <!-- container fluid -->
 </nav> <!-- Navigation-->
+

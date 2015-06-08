@@ -1,8 +1,26 @@
-Securiser l'acces a la base de donnée
-FAIRE MVC MODEL ( revoir variable statique sur dao)
+Securiser l'acces a la base de données (done)
+Inscription en une seule recuperer les erreurs  par try catch
+Modifier DAO pour retourner des valeurs via le execRequest
+Modifier le comportement de execREquest selon le type select/insert/update
+FAIRE MVC MODEL ( revoir variable statique sur dao) (done)
+COMPRENDRE le MVC
+	ob_start 
+	comprendre la fonction controller->set()
+REVOIR le probleme avec hook redirection admin sans utiliser les sessions rappel !(a && b) = !a || !b
+Fusionner model save and update et mettre les methodes dans doa et et étendre model avec dao
+
 Navigation
+
+	REfaire l'estetique
 	GitHub
 Blog
+	Connexion / Déconnexion
+	activation compte(done)
+	fonction de recherche
+	Se souvenir de moi
+	précédent/ Suivant 
+	inscription (modal)
+	page login erreur
 	Barre navigation hover
 	Bootstrap effet carroussel
 	Card UI
@@ -10,13 +28,9 @@ Blog
 	footer videos
 	footer images
 	Effet animation 3D bouton
-	fonction de recherche
-	inscription (modal)
-	Connexion / Déconnexion
-	Se souvenir de moi
 	commentaire imbriqué
 	like/dislike
-	précédent/ Suivant (done)
+	Systeme de datepicker
 
 CV	
 	Bootstrap
