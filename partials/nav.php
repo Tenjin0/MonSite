@@ -1,5 +1,5 @@
-<?php //debug($this);?>
-<?php //debug($_SESSION['User']);?>
+<?php //debug($this)?>
+<?php //debug($_SESSION['User'])?>
 
 <nav id="mainbar" class="navbar navbar-inverse" role="navigation">
     <div class="container-fluid">

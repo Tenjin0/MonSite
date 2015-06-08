@@ -43,10 +43,10 @@ class BlogController extends Controller{
 			$this->set('news',$news);
 		}
 
-
+		debug($news);
 		// $this->set($news);
-		// $this->render('index');
-		// var_dump($this->vars);
+		// $this->render('view');
+		// debug($this->vars);
 	}
 
 	public function  viewall(){

@@ -1,4 +1,4 @@
-<?php var_dump($news) ?>
+<?php ?>
 
  <div class="row">
                 <section id="news" class="col-md-9">
@@ -27,7 +27,7 @@
                             
                             </div>
                         </article>
-                        <span> <a href="http://<?= $news["urlSite"]."/".$news["source_link"] ?>">source : ""</a>
+                        <span> <a href="<?php echo $news['source_link'] ?>">source"</a>
                         </span>
  
                 </section>

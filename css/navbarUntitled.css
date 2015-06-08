@@ -1,0 +1,49 @@
+
+
+/****** navbar *****/
+
+#mainbar{
+	display: inline-block;
+}
+.navbar-brand
+{
+	margin-top: 12px;
+}
+.navbar-header{
+	margin-top: 8px;
+}
+.navbar-fixed-bottom{
+	margin-bottom: -20px;
+}
+.navbar-default{
+	margin-top: -5px;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #555;
+  background-color: #eee;
+}
+
+
+#mainBar #meButton{
+	padding-top: 10px;
+}
+#mainBar #cvButton{
+	padding-top: 10px;
+}
+
+#mainBar #dropButton{
+	padding-top: 10px;
+}
+
+#mainBar #gitButton{
+	padding-top: 10px;
+}
+
+#mainBar #gitButton img{
+	width: 24px;
+	height: 24px;
+	margin-top: -4px;
+	margin-right: 2px;

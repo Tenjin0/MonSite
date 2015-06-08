@@ -15,12 +15,12 @@ function debug($var=null){
 		}
 		echo '</ul>';
 		echo "<pre>";
-		if (!isset($var)){
+		// if (!isset($var)){
 			var_dump($var);
 			
-		} else {
-			echo  "Undefined";
-		}
+		// } else {
+			// echo  "Undefined";
+		// }
 		echo "</pre>";	
 	}	
 }
