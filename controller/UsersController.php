@@ -6,7 +6,10 @@
  class UsersController extends Controller{
 
  	public $layout = 'defaultUsers';	
- 		
+ 	
+ 	function index(){
+ 		$this->render('login');
+ 	}
  	function login(){
  		ob_start();
  		$data = $this->request->data;
@@ -72,11 +75,11 @@
  		// debug($this->request->data);
  		if($this->request->data){
  			$this->loadModel('users');
- 			$data['password'] = $this->request->data['password'] = sha1($this->request->data['password']);
+ 			$data['password'] = sha1($this->request->data['password']);
  			$data['confirmpassword']= sha1($this->request->data['confirmpassword']);
  			// debug($this->users->validate);
  			// debug($data);
-			if($this->validates($this->users->validate,$data)){
+			if($this->validates($this->users->validate,$this->request->data)){
 	 			$conditions = array('email'=>$data['email']
 					);
 
@@ -132,10 +135,11 @@
  			}
  		
  		}
- 		
+ 		ob_end_flush();
  	}
 
  	function activate(){
+ 		
  		$data=$this->request->data;
  		$this->loadmodel('users');
 		$email= $data['email'];
@@ -149,5 +153,6 @@
  	}
  	function account(){
  		
- 	}
+		//var_dump($this->request->data);
+	}
  }

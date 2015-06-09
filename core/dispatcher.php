@@ -36,7 +36,7 @@ class Dispatcher{
 		$name = ucfirst($this->request->controller).'Controller';
 		$file = ROOT.DS.'controller'.DS.$name.'.php';
 		// var_dump($name);
-		// debug($this->request);
+		//debug($this->request);
 		if(!file_exists($file)){
 			$this->error('Le controller '.$this->request->controller.' n\'existe pas');
 		}

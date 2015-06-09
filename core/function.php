@@ -1,5 +1,6 @@
 <?php
 
+
 function debug($var=null){
 	if(Config::$debug > 0){
 		$backtrace = debug_backtrace();
@@ -23,4 +24,13 @@ function debug($var=null){
 		// }
 		echo "</pre>";	
 	}	
+
+
+	
 }
+
+
+
+
+
+    

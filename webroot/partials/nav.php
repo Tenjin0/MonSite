@@ -15,10 +15,17 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav" >
-                <li><a class="bar" href="#">Blog</a></li>
-                <li><a class="bar" href="cv.php">CV</a></li>
+                <li><a class="bar" href="<?php echo REFFERER.DS ?>blog/">Blog</a></li>
+                <li><a class="bar" href="<?php echo REFFERER.DS ?>cv/">CV</a></li>
+                <?php if ($this->session->isAdmin()){ ?>
+                <li><a class="bar" href="<?php echo REFFERER.ADMIN.DS ?>blog/">Admin</a></li>
+                <?php }else{?>
                 <li><a class="bar" href="#">Contact</a></li>
-                <li class="dropdown"> 
+                <?php } ?>
+                <li>
+                    <a id="gitButton" href="https://github.com/Tenjin0?tab=repositories" target="_blank">Git</a>
+                </li>
+                <li class="dropdown disabled"> 
                     <a class="bar" data-toggle="dropdown" href="#">Projets<b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         
@@ -45,11 +52,11 @@
                                     <span class="sr-only">Close</span>
                                 </span>
                             </button>
-                                <button type="submit" class="btn btn-warning btn-sm">
-                                    <span class="glyphicon glyphicon-search">
-                                        <span class="sr-only">Search</span>
-                                    </span>
-                                </button>
+                            <button type="submit" class="btn btn-warning btn-sm">
+                                <span class="glyphicon glyphicon-search">
+                                    <span class="sr-only">Search</span>
+                                </span>
+                            </button>
                             </span>
                         </div>
                     </form>

@@ -2,7 +2,7 @@
 
 class Config{
 
-	static $debug = 1;
+	static $debug = 0;
  	static $database = array(
 							'default' => array(
 												'hostname' => 'localhost',

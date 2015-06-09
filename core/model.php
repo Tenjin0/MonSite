@@ -63,12 +63,14 @@ class Model
 				$sql .= implode(' AND ', $cond);
 			}
 		}
-
+		if(isset($req['order'])){
+			$sql .= ' ORDER BY ' .$this->table.'.'.$req['order']. ' desc';
+		}
 		if(isset($req['limit'])){
 			$sql .= ' LIMIT ' .$req['limit'];
 		}
-
-		//debug($sql);
+		
+		// debug($sql);
 		// exit($sql);
 		$res= $this->db->execRequest($sql,'select');
 		// debug($res);

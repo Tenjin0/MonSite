@@ -1,7 +1,8 @@
-<?php foreach ($news as $key => $value): ?>
+<?php 
+  foreach ($this->vars['news'] as $key => $value): ?>
 	<h2><?php  echo $value['title']?></h2>
 	<p class="thumbnail"><?= $this->texte_resume_html($value['content'],200);?></p>	
-	<p><a href="<?php echo REFFERER.'/blog/view/'. $value['idNews']; ?>">Lire la suite &rarr;</a></p>
+	<p><a href="<?php echo REFFERER.'/blog/view/'. $value['position']; ?>">Lire la suite &rarr;</a></p>
 <?php endforeach ?>
 <nav>
   <ul class="pagination">

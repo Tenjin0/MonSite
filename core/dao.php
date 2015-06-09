@@ -49,7 +49,7 @@
 			return self::$myInstance;
 		}
 		public function getList(){
-			$sql = "SELECT idNews,title from news,source WHERE news.fk_idsource = source.idSource ORDER BY news.date desc";
+			$sql = "SELECT idNews, title ,content,(select count(*) from news as n where news.date > n.date ) +1 as position from news,source  WHERE news.fk_idsource = source.idSource order by news.date desc";
 			return $this->execRequest($sql,'select');
 		}
 
@@ -68,17 +68,24 @@
 			return $this->execRequest($sql,'select');
 		}
 
+
 		public function getNewsById($id){
-			$sql = " SELECT *,(select count(*) from news where date > n.date order by date desc) +1 as position from news as n,source WHERE n.idNews= 1 AND n.fk_idsource = source.idSource ";
+			$sql = " SELECT *,(select count(*) from news where date > n.date order by date desc) +1 as position from news as n,source WHERE n.idNews= $id AND n.fk_idsource = source.idSource ";
 			return $this->execRequest($sql,'select');
 		}
 
 		// Premiere news qui est la plus récente commence par 1 
-		public function getNewsByNumber($number){
-			if($number < 1 || $number > self::getNumberOfNews()){
-				$number=1;
-			} 
-			// echo "number apres vérification $number\n";
+		public function getNewsByNumber($number=null){
+			if(isset($number)){
+				if($number < 1 || $number > self::getNumberOfNews()){
+					$number=1;
+				} 
+				
+			}else {
+				$number=1; 
+			}
+			
+			 //echo "number apres vérification $number\n";
 			$sql = "SELECT *,$number as position from news,source WHERE news.fk_idsource = source.idSource ORDER BY news.date desc LIMIT :number, 1";
 			$reponse = $this->getConnection()->prepare($sql);
 			$reponse->bindValue('number', $number-1, PDO::PARAM_INT);
@@ -90,8 +97,8 @@
 		}
 
 		public function RequestNumberOfNews(){
-			$sql = "SELECT count(idNews) from news";
-			return $this->execRequest($sql,'select');
+			$sql = "SELECT count(idNews) as news from news";
+			return $this->execRequest($sql,'select')[0]['news'];
 		}
 
 		public  function getNumberOfNews(){

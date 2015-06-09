@@ -1,8 +1,8 @@
-		<footer>
+		<footer class="container-fluid">
+			<div class='row copyright'>Copyright Tenji - Tous droits réservés
+			<a href="#">Me contacter !</a></div>
+			</divclass = "row">
 			<div>
-			<p>Copyright Tenji - Tous droits réservés
-			<a href="#">Me contacter !</a></p>
-			</div>
 		</footer>
 
 		<!-- <script src="../bower_components/jquery/dist/jquery.min.js"></script>

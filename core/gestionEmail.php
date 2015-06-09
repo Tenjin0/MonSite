@@ -23,7 +23,7 @@ class Email{
 		$headers .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
 
 		// En-têtes additionnels
-		$headers .= 'To: patricepetit@hotmail.com'. "\r\n";
+		$headers .= "To: $to". "\r\n";
 		$headers .= 'From: Patrice PETIT <petitpatrice@gmail.com>' . "\r\n";
 
 		return mail($to,$sujet,$message,$headers);

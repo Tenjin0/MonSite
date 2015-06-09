@@ -11,12 +11,22 @@ class BlogController extends Controller{
 		$condition = array('online' => 1, 'type' => 'page');
 		// var_dump($this->request->page);
 		$d['news'] = $this->news->find(array(
+			'fields' => 'idNews, title, content ,(select count(*) from news as n where news.date > n.date ) +1 as position',
 			'conditions' => $condition,
-			'limit' => ($perPage*($this->request->page - 1)) .', ' .$perPage
+			'limit' => ($perPage*($this->request->page - 1)) .', ' .$perPage,
+			'order' => 'date'
+
 			));
-		$d['total'] = $this->news->findCount($condition);
+		if(isset($this->request->data['page'])){
+			$page = $this->request->data['page'];
+		} else {
+
+			$page = null;
+		}
+		// $d['news'] = $this->news->db->get($page);
+		$d['total'] = $this->news->db->numberOfNews;
 		$d['pages']= ceil(intval($d['total']) / $perPage);
-		// var_dump($d);
+		// debug($d);
 		if(empty($d['news'] )){
 			$this->e404('Page introuvable');
 		}else{
@@ -30,20 +40,23 @@ class BlogController extends Controller{
 
 	}
 
-	public function view($id){
+	public function view($number=null){
 		$this->loadModel('news');
 		// var_dump($this->news);
-		$conditions = array('idNews'=>$id,'online' => 1, 'type' => 'page'
-			);
-		$news = $this->news->findFirst(array(
-			'conditions'=> $conditions));
+		//$conditions = array('idNews'=>$id,'online' => 1, 'type' => 'page'
+		//	);
+
+		$news = $this->news->db->getNewsByNumber($number);
+		$news['totalNumber'] = $this->news->db->getNumberOfNews();
+		// debug($news);
+		$news['date']= $this->getFormatDate($news['date']);
 		if(empty($news)){
 			$this->e404('Page introuvable');
 		}else{
 			$this->set('news',$news);
 		}
 
-		debug($news);
+		// debug($news);
 		// $this->set($news);
 		// $this->render('view');
 		// debug($this->vars);
@@ -114,6 +127,7 @@ class BlogController extends Controller{
 		}
 		if($id){
 			$this->request->data = $this->news->findFirst(array(
+			'fiedls' => 'idnews,titlte,content,online',
 			'conditions' => array('idNews' => $id)
 			));
 			$d['id'] = $id;

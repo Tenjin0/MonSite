@@ -10,7 +10,7 @@
 				'message' => 'wrong format'
 				),
 			'password' => array(
-				'rule' => '([a-z0-9]{6,})',
+				'rule' => '([a-z0-9]{5,})',
 				'message' => '> 6 caracteres'
 				),
 			'username' => array(
@@ -18,7 +18,7 @@
 				'message' => '> 6 caracteres'
 				),
 			'confirmpassword' => array(
-				'rule' => '([a-z0-9]{6,})',
+				'rule' => '([a-z0-9]{5,})',
 				'message' => '> 6 caracteres'
 				),
 		// 'url' => array(

@@ -32,6 +32,7 @@ class Controller{
 		$content_for_layout = ob_get_clean();
 		require ROOT.DS.'view'.DS.'layout'.DS.$this->layout.'.php';
 		$this->rendered = true;
+		
 	}
 
 	public function set($key,$value=null){
@@ -175,8 +176,8 @@ class Controller{
 	}
 
 	public function validates($validate, $data){
-		//debug($validate);
-		//debug( $data);
+		// debug($validate);
+		// debug( $data);
 		
 		$errors = array();
 		foreach ($validate as $k => $v) {
@@ -206,7 +207,7 @@ class Controller{
 				}
 			}
 		}
-		//debug($errors);
+		// debug($errors);
 		$this->errors = $errors;
 		if(empty($errors)){
 			return true;
@@ -218,5 +219,36 @@ class Controller{
 			header('HTTP/1.1 301 Moved Permanently');
 		}
 		header("Location: $url");
+	}
+
+	function getFormatDate($date = null){
+
+
+			$mois = array(
+		    1=>"Janvier",
+		    2=>"Février",
+		    3=>"Mars",
+		    4=>"Avril",
+		    5=>"Mai",
+		    6=>"Juin",
+		    7=>"Juillet",
+		    8=>"Aout",
+		    9=>"Septembre",
+		    10=>"Octobre",
+		    11=>"Novembre",
+		    12=>"Décembre",
+			);
+			
+			if (isset($date)){
+				$dateNews = date("j ",strtotime($date));
+				//debug($date);
+				// debug(intval(date("n",strtotime($date))));
+				$dateNews .= $mois[(date("n",strtotime($date)))];
+				$dateNews .= date(" Y",strtotime($date));
+			return $dateNews;
+			}
+			$dt = new DateTime();
+			$dt->format('Y-m-d H:i:s');
+		return $dt;
 	}
 }

@@ -33,52 +33,54 @@ body{
     /*background-attachment: fixed;*/
 }
 
-.page-header{
-    padding: 0em 0em 0em;
-    margin: -15px 0px 20px;
-    background: url('../images/separateur.png') repeat-x bottom;
-
-}
-
 /*#titre_principal{
     display: inline-block;
 }*/
 
-header h3{
-    font-family: AlexBrush, Dayrom, serif;
-    font-size:40px;
-    margin-left: 0.2em;
-
-    /*font-weight: normal;*/
-
+/*#main{
+    
+    margin-left :2em;
+    margin-right:1em;
+    padding-right: 15px;
+    padding-left: 15px;
 }
-.container section article .newstitle{
+.container-fluid{
+    margin-left :0em;
+    margin-right:0em;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+*/#footer{
+    height: 3em;
+    background-image: linear-gradient(to bottom, #FFFFFF 0%, #D3D8E8 100%);
+}
+.container-fluid section article .newstitle{
     /*width: 90%;*/
     margin-top: 1em;
     margin-bottom: 1em;
 }
-.container #news .well{
+.container-fluid #news .well{
     color:#000;
 }
-.container section{
+.container-fluid section{
 
     background-color: #212830;
     color:white;
     padding:0em 2.5em 0em;
 }
-.container section article .ico-news{
+.container-fluid section article .ico-news{
     /*width: 10%;*/
     /*height:12.3%;*/
     padding: 0em;
 }
 
-.container section article{
+.container-fluid section article{
     font-size: 13px;
     vertical-align: top;
     text-align: justify;
 }
 
-.container section span{
+.container-fluid section span{
     text-align: center;
     padding: 0em 0.5em 0em;   
 
@@ -89,12 +91,12 @@ header h3{
     color: white;
     /*font-size: 1em;*/
 }
-.container section span a{
+.container-fluid section span a{
     /*color: white;*/
 }
 
 
-.container section .pager li a{
+.container-fluid section .pager li a{
 
     text-align: center;
     /*padding: 1em 0.5em 0em;   */
@@ -103,13 +105,13 @@ header h3{
     border: 0em;
 }
 
-.container section .pager .active > a{
+.container-fluid section .pager .active > a{
 
     background-color: #222;
     color: #FFC203;
 }
 
-.container section .pager .disabled > a{
+.container-fluid section .pager .disabled > a{
 
     pointer-events: none;
     cursor: default;
@@ -117,19 +119,20 @@ header h3{
 
 }
 
-.container section .pager .active > a:hover{
+.container-fluid section .pager .active > a:hover{
     background-color: #000;
 }
 
 
-footer{
+.copyright{
     background-image: linear-gradient(to bottom, #FFFFFF 0%, #D3D8E8 100%);
     height: 2em;
-    margin-top: 2em;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
+    margin-top :3em;
+    padding-bottom: 1em;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
 }
 
 /*#photo_ATOMSK{
@@ -152,6 +155,5 @@ footer{
     margin: 0px 1px 5px;
     font-family: Titillium,sans-serif;
     line-height: 2.4rem;
-    color: #FFF;
     border-radius:none;
 }

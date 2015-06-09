@@ -1,6 +1,6 @@
 <?php 
 require("session.php");
-require("function.php");
+require_once("function.php");
 require('rooter.php');
 // var_dump(ROOT.DS.'config'.DS.'config.php');
 require(ROOT.DS.'config'.DS.'config.php');

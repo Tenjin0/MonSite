@@ -22,7 +22,7 @@
    
 }*/
 
-.navbar-inverse .navbar-nav li .bar,#btn-login{
+.navbar-inverse .navbar-nav li .bar,#btn-login,#gitButton{
     font-size: 13px;
     font-family:"DINregular",impact;
     color: #FFF;
@@ -35,12 +35,12 @@
     font-family:"lokicola",impact;
     color: #FFF;
 }
-.navbar-inverse .navbar-brand:hover{
+.navbar-inverse .navbar-brand:hover,#gitButton:hover{
     background-color: #FFF;
     color:#000;
 }
 
-.navbar-inverse .navbar-nav li:hover,.navbar-inverse .navbar-nav > li > a:hover,.navbar-inverse .navbar-nav > .dropdown  > .bar:hover{
+.navbar-inverse .navbar-nav li:hover,.navbar-inverse .navbar-nav > li > a:hover,.navbar-inverse .navbar-nav > .dropdown  > .bar:hover,#gitButton:hover{
 
     background-color: #000;
     color:#FFF;

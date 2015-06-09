@@ -17,3 +17,6 @@ if ( $( "#password" ).is( ".has-error" ) ){
 if ( $( "#confirmpassword" ).is( ".has-error" ) ){
 				$("#alertconfirmpassword").show("slow");
 		}
+$('.dropdown').find("a").not('.dropdown-toggle').on("click",function(e){
+    e.stopImmediatePropagation();
+});
